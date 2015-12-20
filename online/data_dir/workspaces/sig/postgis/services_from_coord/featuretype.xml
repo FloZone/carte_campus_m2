@@ -1,0 +1,63 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-1cff491b:151a0dba11f:-7df8</id>
+  <name>services_from_coord</name>
+  <nativeName>services_from_coord</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl--2ff621ad:1508b02ac70:-7fe5</id>
+  </namespace>
+  <title>services_from_coord</title>
+  <keywords>
+    <string>services_from_coord</string>
+    <string>features</string>
+  </keywords>
+  <srs>EPSG:900913</srs>
+  <nativeBoundingBox>
+    <minx>-1.0</minx>
+    <maxx>0.0</maxx>
+    <miny>-1.0</miny>
+    <maxy>0.0</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>-8.9831528412E-6</minx>
+    <maxx>0.0</maxx>
+    <miny>-8.983152841E-6</miny>
+    <maxy>0.0</maxy>
+    <crs>GEOGCS[&quot;WGS84(DD)&quot;, 
+  DATUM[&quot;WGS84&quot;, 
+    SPHEROID[&quot;WGS84&quot;, 6378137.0, 298.257223563]], 
+  PRIMEM[&quot;Greenwich&quot;, 0.0], 
+  UNIT[&quot;degree&quot;, 0.017453292519943295], 
+  AXIS[&quot;Geodetic longitude&quot;, EAST], 
+  AXIS[&quot;Geodetic latitude&quot;, NORTH]]</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="JDBC_VIRTUAL_TABLE">
+      <virtualTable>
+        <name>services_from_coord</name>
+        <sql>Select s.* from osm_new_buildings b join services s on b.id = s.buildings_id where ST_Contains(ST_Union(geometry,ST_Centroid(geometry)), ST_SetSRID(st_makepoint(%lon%, %lat%), ST_SRID(geometry)))
+</sql>
+        <escapeSql>false</escapeSql>
+        <parameter>
+          <name>lon</name>
+          <defaultValue>0.0</defaultValue>
+          <regexpValidator>^[\d\.\+-eE]+$</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>lat</name>
+          <defaultValue>0.0</defaultValue>
+          <regexpValidator>^[\d\.\+-eE]+$</regexpValidator>
+        </parameter>
+      </virtualTable>
+    </entry>
+  </metadata>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl--2ff621ad:1508b02ac70:-7fe4</id>
+  </store>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

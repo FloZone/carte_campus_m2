@@ -1,0 +1,15 @@
+<layer>
+  <name>get_all_services</name>
+  <id>LayerInfoImpl-1cff491b:151a0dba11f:-6f86</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--2ff621ad:1508b02ac70:-8000</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-1cff491b:151a0dba11f:-6f87</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

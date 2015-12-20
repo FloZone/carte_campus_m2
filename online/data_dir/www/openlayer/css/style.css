@@ -1,0 +1,91 @@
+html, body, #map {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    outline: 0px;
+    overflow: hidden;
+}
+
+#geolocme{
+    text-align: center;
+    list-style:none;
+}
+
+.ol-popup {
+    position: absolute;
+    background-color: white;
+    -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+    padding: 1em;
+    border-radius: 1em;
+    border: 1px solid #cccccc;
+    bottom: 1em;
+    left: -50px;
+    min-width: 20em;
+}
+.ol-popup:after, .ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 1em;
+    margin-left: -10px;
+}
+.ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 1em;
+    margin-left: -11px;
+}
+.ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 0.2em;
+    right: 0.2em;
+}
+.ol-popup-closer:after {
+    content: "✖";
+}
+
+.interdit {
+    font-size: 200%;
+    cursor: pointer;
+    margin: 1em;
+}
+
+.noLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.inputTaille {
+    width: 90% !important;
+    margin: 1em 0;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.objet {
+    border: 1px #AAA solid;
+    padding: 0.5em;
+    text-align: center;
+    font-size: 80%;
+    cursor: pointer;
+}
+
+#rooting, .imgCursoor {
+    text-align: center;
+}
+
+.imgCursoor img{
+    margin: 1em;
+}

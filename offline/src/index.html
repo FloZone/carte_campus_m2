@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus d'Orléans</title>
+    <meta charset="utf-8">
+    <link href="leaflet/leaflet.css" rel="stylesheet">
+    <link href="search/leaflet-search.css" rel="stylesheet">
+    <link href="general/style.css" rel="stylesheet">
+    <link href="sidebar/sidebar.css" rel="stylesheet">
+    <link href="sidebar/font-awesome.min.css" rel="stylesheet">
+    <link href="itineraire/jquery-ui.min.css" rel="stylesheet">
+    <link href="search/jquery-ui.min.css" rel="stylesheet">
+
+    <link rel="icon" href="general/icon.png" />
+</head>
+
+<body>
+    <div id="sidebar" class="sidebar collapsed">
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#search" role="tab"><i class="fa fa-map"></i></a></li>
+                <li><a href="#itineraire" role="tab"><i class="fa fa-location-arrow"></i></a></li>
+                <li><a href="#me" role="tab"><i class="fa fa-user"></i></a></li>
+            </ul>
+            <ul role="tablist">  
+                <li onclick="admin()" class="disabled"><a><i class="fa fa-cog"></i></a></li>
+                <li onclick="geoLocMe()" class="disabled"><a><i class="fa fa-map-marker"></i></a></li>
+            </ul>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="search">
+                <h1 class="sidebar-header">
+                    Recherche<div class="sidebar-close"><i class="fa fa-caret-left"></i></div>
+                </h1>
+                <div id="containerSearch"></div>
+                <br><br>
+                <div id="accordion"></div>
+            </div>
+
+            <div class="sidebar-pane" id="itineraire">
+                <h1 class="sidebar-header">
+                    Itinéraire<div class="sidebar-close"><i class="fa fa-caret-left"></i></div>
+                </h1>
+                <div>
+                  <br>
+                  Départ:<br>
+                  <input type="text" name="depart" class="itineraireCSS" id="search1"/>
+                  <br><br>
+                  <div>
+                    <i class="fa fa-arrows-v" onClick="retourneDestination()"></i>
+                  </div>
+                  Arrivée:<br>
+                  <input type="text" name="arrivee" class="itineraireCSS" id="search2"/>
+                  <br><br>
+                  <div>
+                    <i class="fa fa-magic" onClick="trouverRoute()"></i>
+                  </div>
+                </div>
+            </div>
+
+            <div class="sidebar-pane" id="me">
+                <h1 class="sidebar-header">
+                    Mon Icone <div class="sidebar-close"><i class="fa fa-caret-left"></i></div>
+                </h1>
+                <div class="choice">
+                    <img src="choice/default.png" alt="Default" onclick="myRide('default.png')" id="default.png"/>
+
+                    <img src="choice/cursor.png" alt="Pusheen" onclick="myRide('cursor.png')" id="cursor.png"/>
+                    <img src="choice/ship.gif" alt="SpaceShip" onclick="myRide('ship.gif')" id="ship.gif"/>
+                    <img src="choice/croustade.png" alt="Croustade" onclick="myRide('croustade.png')" id="croustade.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="map" class="sidebar-map"></div>
+
+    <script src="cordova.js"></script>
+    
+    <script src="leaflet/leaflet.js"></script>
+    <script src="search/leaflet-search.min.js"></script>
+    <script src="search/jquery.min.js"></script>
+    <script src="search/jquery-ui.min.js"></script>
+    <script src="sidebar/sidebar.js"></script>
+    <script src="general/style.js"></script>
+    <script src="choice/geolocalisation.js"></script>
+    <script src="json/map.json"></script>
+    <script src="itineraire/graph.js"></script>
+    <script src="itineraire/path.js"></script>
+    <script src="search/search.js"></script>
+    <script src="itineraire/jquery-ui.min.js"></script>
+    <script src="itineraire/itineraire.js"></script>
+    <script src="popup/popup.js"></script>
+    <script src="general/index.js"></script>
+
+    <script type="text/javascript">
+
+        /* Création Map */
+        var mapTot = L.map('map').setView([47.84402,1.93575], 16);
+
+        /* Ajout Carte Campus */
+        L.geoJson(map, {
+            style: style,
+            onEachFeature: onEachFeature,
+            filter: filter
+        }).addTo(mapTot);
+
+		/* Routing : sauvegarde du graphe s'il n'est pas déjà sauvegardé */
+		if(!routingGraph.isSaved()){
+			routingGraph.save();
+		}
+
+        /* SideBar */
+        var sidebar = L.control.sidebar('sidebar').addTo(mapTot);
+
+        /* Geolocalisation */
+        mapTot.on('locationfound', onLocationFound);
+        mapTot.locate({setView: false, maxZoom: 16});
+
+        /* Recherche */
+        mapTot.addControl(searchControl);
+        // cache le marker de search si on clique sur la map
+        mapTot.on('click', searchHideMarker);
+        // remplir le menu accordéon
+        searchPopulateAccordion("accordion");
+
+
+    </script>
+</body>
+</html>

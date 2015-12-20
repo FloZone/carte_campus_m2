@@ -1,0 +1,2 @@
+- reprendre le css utilisé pour le offline
+- liste de recherche

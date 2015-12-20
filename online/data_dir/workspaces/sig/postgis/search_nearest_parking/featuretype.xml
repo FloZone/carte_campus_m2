@@ -1,0 +1,68 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-c8e8eeb:15197205589:-1b6f</id>
+  <name>search_nearest_parking</name>
+  <nativeName>search_nearest_parking</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl--2ff621ad:1508b02ac70:-7fe5</id>
+  </namespace>
+  <title>search_nearest_parking</title>
+  <keywords>
+    <string>search_nearest_parking</string>
+    <string>features</string>
+  </keywords>
+  <srs>EPSG:900913</srs>
+  <nativeBoundingBox>
+    <minx>215595.27861559</minx>
+    <maxx>215597.27861559</maxx>
+    <miny>6080127.69186515</miny>
+    <maxy>6080129.69186515</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>1.9367253396439112</minx>
+    <maxx>1.9367433059495935</maxx>
+    <miny>47.83909555400164</miny>
+    <maxy>47.83910761325316</maxy>
+    <crs>GEOGCS[&quot;WGS84(DD)&quot;, 
+  DATUM[&quot;WGS84&quot;, 
+    SPHEROID[&quot;WGS84&quot;, 6378137.0, 298.257223563]], 
+  PRIMEM[&quot;Greenwich&quot;, 0.0], 
+  UNIT[&quot;degree&quot;, 0.017453292519943295], 
+  AXIS[&quot;Geodetic longitude&quot;, EAST], 
+  AXIS[&quot;Geodetic latitude&quot;, NORTH]]</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="JDBC_VIRTUAL_TABLE">
+      <virtualTable>
+        <name>search_nearest_parking</name>
+        <sql>SELECT ST_Centroid(geometry) FROM osm_new_landusages where type=&apos;parking&apos; ORDER BY geometry &lt;-&gt; st_makepoint(%lon%, %lat%) LIMIT 1
+</sql>
+        <escapeSql>false</escapeSql>
+        <geometry>
+          <name>st_centroid</name>
+          <type>Geometry</type>
+          <srid>-1</srid>
+        </geometry>
+        <parameter>
+          <name>lon</name>
+          <defaultValue>0.0</defaultValue>
+          <regexpValidator>^[\d\.\+-eE]+$</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>lat</name>
+          <defaultValue>0.0</defaultValue>
+          <regexpValidator>^[\d\.\+-eE]+$</regexpValidator>
+        </parameter>
+      </virtualTable>
+    </entry>
+  </metadata>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl--2ff621ad:1508b02ac70:-7fe4</id>
+  </store>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

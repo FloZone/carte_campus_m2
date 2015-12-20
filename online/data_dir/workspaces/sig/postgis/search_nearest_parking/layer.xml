@@ -1,0 +1,15 @@
+<layer>
+  <name>search_nearest_parking</name>
+  <id>LayerInfoImpl-c8e8eeb:15197205589:-1b6e</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--2ff621ad:1508b02ac70:-8000</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-c8e8eeb:15197205589:-1b6f</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

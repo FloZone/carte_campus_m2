@@ -1,0 +1,58 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-1cff491b:151a0dba11f:-6f87</id>
+  <name>get_all_services</name>
+  <nativeName>get_all_services</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl--2ff621ad:1508b02ac70:-7fe5</id>
+  </namespace>
+  <title>get_all_services</title>
+  <keywords>
+    <string>get_all_services</string>
+    <string>features</string>
+  </keywords>
+  <srs>EPSG:900913</srs>
+  <nativeBoundingBox>
+    <minx>215941.435283585</minx>
+    <maxx>215943.435283585</maxx>
+    <miny>6081173.32079232</miny>
+    <maxy>6081175.32079232</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>1.939834917899509</minx>
+    <maxx>1.9398528842051912</maxx>
+    <miny>47.84539992277301</miny>
+    <maxy>47.845411980559085</maxy>
+    <crs>GEOGCS[&quot;WGS84(DD)&quot;, 
+  DATUM[&quot;WGS84&quot;, 
+    SPHEROID[&quot;WGS84&quot;, 6378137.0, 298.257223563]], 
+  PRIMEM[&quot;Greenwich&quot;, 0.0], 
+  UNIT[&quot;degree&quot;, 0.017453292519943295], 
+  AXIS[&quot;Geodetic longitude&quot;, EAST], 
+  AXIS[&quot;Geodetic latitude&quot;, NORTH]]</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="JDBC_VIRTUAL_TABLE">
+      <virtualTable>
+        <name>get_all_services</name>
+        <sql>Select ST_Centroid(geometry) as centre, b.name as buildings_name, b.name as buildings_type, s.* from osm_new_buildings b join services s on b.id = s.buildings_id
+</sql>
+        <escapeSql>false</escapeSql>
+        <geometry>
+          <name>centre</name>
+          <type>Geometry</type>
+          <srid>-1</srid>
+        </geometry>
+      </virtualTable>
+    </entry>
+  </metadata>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl--2ff621ad:1508b02ac70:-7fe4</id>
+  </store>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

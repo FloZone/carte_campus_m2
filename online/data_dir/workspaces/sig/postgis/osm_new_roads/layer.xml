@@ -1,0 +1,15 @@
+<layer>
+  <name>osm_new_roads</name>
+  <id>LayerInfoImpl-221c4a3c:150aa044e85:-7fc5</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-94b695e:150af725f40:-5b99</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-221c4a3c:150aa044e85:-7fc6</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

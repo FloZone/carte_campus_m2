@@ -1,0 +1,15 @@
+<layer>
+  <name>search_buildings</name>
+  <id>LayerInfoImpl--24a41659:15126a29649:-7ffd</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--2ff621ad:1508b02ac70:-8000</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--24a41659:15126a29649:-7ffe</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

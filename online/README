@@ -1,0 +1,36 @@
+PHP 
+------------------------------------------
+-> apt-get install php5
+-> apt-get install apache2
+-> apt-get install php5-pgsql
+
+-> Dans /etc/php5/apache2/php.ini, ajouter "extension=pgsql.so"
+
+-> Dans /var/www/html/, copier le contenu du dossier php/
+
+
+Geoserver
+-------------------------------------------
+-> Remplacer le contenu du data_dir de votre dossier geoserver par celui du dossier data_dir/ présent.
+
+
+Base de Données
+-------------------------------------------
+I) Créer le USER
+	sudo -su postgres
+	psql
+	CREATE USER sig;
+	ALTER ROLE sig WITH CREATEDB;
+	ALTER USER sig WITH PASSWORD 'sig';
+
+II) Créer la base
+	CREATE DATABASE gis OWNER sig;
+	\q
+	exit
+
+III) Importer la base
+	Récupérer la base.
+	La placer dans /var/lib/postgresql/
+	sudo chmod 777 /var/lib/postgresql/<nom du fichier>
+	sudo -i -u postgres
+	psql gis < <nom du fichier>

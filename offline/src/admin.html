@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Administration Campus</title>
+        <meta charset="utf-8">
+        <link href="administration/admin.css" rel="stylesheet">
+        <link href="administration/bootstrap.min.css" rel="stylesheet">
+        <link href="itineraire/jquery-ui.min.css" rel="stylesheet">
+        <link rel="icon" href="general/icon.png" />
+        <link href="sidebar/font-awesome.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row margInterne">
+              <button type="button" class="btn btn-warning" onclick="indexPage();">
+                <i class="fa fa-paper-plane"></i> Retour
+              </button>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Ajouter un Service</div>
+                        <div class="panel-body" id="errorMessage">
+                            <form id="form">
+                              <div class="form-group">
+                                <label> Bâtiment concerné: </label>
+                                <input type="text" class="form-control" 
+                                        name="batiment" id="batiment1" placeholder="Bâtiment"/>
+                              </div>
+                              <div class="form-group">
+                                <label> Nom du service: </label>
+                                <input type="text" class="form-control" name="nomService" placeholder="Nom du service"/>
+                              </div>
+                              <div class="form-group">
+                                <label> Lien du service: </label>
+                                <input type="text" class="form-control" name="lienService" placeholder="Lien du service"/>
+                              </div>
+                              <div class="form-group">
+                                <label> Description du Service: </label>
+                                <textarea class="form-control" rows="3" id="description"></textarea><br>
+                              </div>
+                              <button type="button" class="btn btn-info" onclick="ajoutService()">Envoyer</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="panel panel-info">
+                      <div class="panel-heading">Les Services</div>
+                      <div class="panel-body" id="services">
+                        <!-- Mettre ici tous les services du json -->
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="supprimerServices()">Tout supprimer</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="json/map.json"></script>
+        <script src="search/jquery.min.js"></script>
+        <script src="administration/bootstrap.min.js"></script>
+        <script src="itineraire/jquery-ui.min.js"></script>
+        <script src="administration/admin.js"></script>
+    </body>
+</html>

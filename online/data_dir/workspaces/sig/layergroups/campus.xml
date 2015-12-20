@@ -1,0 +1,69 @@
+<layerGroup>
+  <id>LayerGroupInfoImpl--562169f4:150b2e978cc:-7c74</id>
+  <name>campus</name>
+  <mode>SINGLE</mode>
+  <title>campus</title>
+  <abstractTxt>LE CAMPUS</abstractTxt>
+  <workspace>
+    <id>WorkspaceInfoImpl--2ff621ad:1508b02ac70:-7fe6</id>
+  </workspace>
+  <publishables>
+    <published type="layer">
+      <id>LayerInfoImpl-44cd3e34:1508b72f4bd:-7f3e</id>
+    </published>
+    <published type="layer">
+      <id>LayerInfoImpl-44cd3e34:1508b72f4bd:-7f3c</id>
+    </published>
+    <published type="layer">
+      <id>LayerInfoImpl-221c4a3c:150aa044e85:51cc</id>
+    </published>
+    <published type="layer">
+      <id>LayerInfoImpl-221c4a3c:150aa044e85:-7fc5</id>
+    </published>
+    <published type="layer">
+      <id>LayerInfoImpl-221c4a3c:150aa044e85:-7fc7</id>
+    </published>
+    <published type="layer">
+      <id>LayerInfoImpl-221c4a3c:150aa044e85:669</id>
+    </published>
+    <published type="layer">
+      <id>LayerInfoImpl-44cd3e34:1508b72f4bd:-7f42</id>
+    </published>
+    <published type="layer">
+      <id>LayerInfoImpl-221c4a3c:150aa044e85:-7fd5</id>
+    </published>
+  </publishables>
+  <styles>
+    <style>
+      <id>StyleInfoImpl-221c4a3c:150aa044e85:-7ff7</id>
+    </style>
+    <style>
+      <id>StyleInfoImpl-94b695e:150af725f40:-7fe6</id>
+    </style>
+    <style>
+      <id>StyleInfoImpl--2ff621ad:1508b02ac70:-7fff</id>
+    </style>
+    <style>
+      <id>StyleInfoImpl-94b695e:150af725f40:-5b99</id>
+    </style>
+    <style>
+      <id>StyleInfoImpl--2ff621ad:1508b02ac70:-7fff</id>
+    </style>
+    <style>
+      <id>StyleInfoImpl-94b695e:150af725f40:-7ff3</id>
+    </style>
+    <style>
+      <id>StyleInfoImpl-72cdbdbb:151551f1690:-1602</id>
+    </style>
+    <style>
+      <id>StyleInfoImpl--2ff621ad:1508b02ac70:-8000</id>
+    </style>
+  </styles>
+  <bounds>
+    <minx>212773.231291048</minx>
+    <maxx>227508.651878399</maxx>
+    <miny>6061448.84631067</miny>
+    <maxy>6083475.6866684</maxy>
+    <crs class="projected">EPSG:900913</crs>
+  </bounds>
+</layerGroup>
